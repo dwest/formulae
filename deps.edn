@@ -1,8 +1,10 @@
-{:paths ["src"]
- :deps
+{:deps
  {ring/ring {:mvn/version "1.10.0"}
   compojure/compojure {:mvn/version "1.7.0"}
-  hiccup/hiccup {:mvn/version "2.0.0-RC1"}}
+  hiccup/hiccup {:mvn/version "2.0.0-RC1"}
+  org.clojure/clojurescript {:mvn/version "1.11.60"}}
+
+ :paths ["src"]
 
  :aliases
  {:build
@@ -18,4 +20,7 @@
    :ns-default build-dev}}}
 
 ;; run without building: clj -M -m formulae.main
-;; run with figwheel: clojure -M:build-dev
+;; run with figwheel and live reloading: clj -M:build-dev
+;;;; use figwheel configuration options as metadata on the top level
+;;;; map in dev.cljs.edn https://figwheel.org/config-options.html
+;;;; these include things like css-dirs to watch for reloading

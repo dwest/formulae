@@ -5,7 +5,12 @@
 (defn index [& args]
   (h/html
    [:head
+    [:meta {:charset "UTF-8"}]
     [:title "Fancy Landing Page"]
-    (page/include-js "/cljs-out/dev-main.js")]
+    [:link {:rel "stylesheet" :href "/public/css/test.css"}]]
    [:body
-    [:p "shaking the rust off"]]))
+    [:div {:id "connect-status"}]
+    [:p "shaking the rust off"]
+
+    [:footer
+     (page/include-js "/cljs-out/dev-main.js")]]))
